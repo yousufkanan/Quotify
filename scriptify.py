@@ -80,5 +80,5 @@ def make_just_girly_things_image(
     image.save(output_path)
     print(f"Saved to {output_path}")
 
-# Example usage:
-make_just_girly_things_image("Next time you choose your dating partner .... don't let copilot choose\n-Jeff")
+if __name__ == "__main__":
+    make_just_girly_things_image("Next time you choose your dating partner .... don't let copilot choose\n-Jeff")
