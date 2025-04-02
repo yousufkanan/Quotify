@@ -6,10 +6,9 @@ def make_quote_image(
     quote,
     output_path='output.jpg'
 ):
-    if quote[0] in ['"', ">"]:
+    if quote[0] in [">"]:
         quote = quote[1:]
-    if quote[-1] in ['"', "<"]:
-        quote = quote[:-1]
+
     # Randomly select an image ID
     image_id = random.randint(0, 9999)
     print(f"Image ID: {image_id}")
