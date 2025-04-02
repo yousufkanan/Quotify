@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import dotenv
-from scriptify import make_just_girly_things_image
+from scriptify import make_quote_image
 import os 
 # Load .env file
 dotenv.load_dotenv()
@@ -34,9 +34,9 @@ async def quote(ctx, *, quote_input):
     output_path = os.path.join(save_folder, f"{ctx.author.id}.jpg")
     
     try:
-        make_just_girly_things_image(quote_input, output_path=output_path)
+        make_quote_image(quote_input, output_path=output_path)
         await ctx.send(file=discord.File(output_path))
     except Exception as e:
-        await ctx.send(f"Error creating #justgirlythings image: {str(e)}")
+        await ctx.send(f"Error creating image: {str(e)}")
 
 bot.run(TOKEN)
