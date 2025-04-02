@@ -1,0 +1,7 @@
+backgrounds/
+images/
+.venv/
+.env
+.DS_Store
+Dancing_Script/
+__pycache__/

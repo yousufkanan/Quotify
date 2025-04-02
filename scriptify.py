@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import textwrap
 import random
 
-def make_just_girly_things_image(
+def make_quote_image(
     quote,
     output_path='output.jpg'
 ):
@@ -59,20 +59,6 @@ def make_just_girly_things_image(
     main_text_color = (255, 255, 255, 220)  # almost opaque white
     draw.multiline_text((x, y), wrapped_text, font=font, fill=main_text_color, align="center")
 
-    # Draw a larger "#justgirlythings" tag in the bottom-right corner
-    tag_font = ImageFont.truetype(font_path, int(font_size * 0.6))
-    tag_text = "#justgirlythings"
-    tag_bbox = draw.textbbox((0, 0), tag_text, font=tag_font)
-    tag_width = tag_bbox[2] - tag_bbox[0]
-    tag_height = tag_bbox[3] - tag_bbox[1]
-    tag_x = width - tag_width - 30
-    tag_y = height - tag_height - 30
-
-    # Shadow for tag
-    draw.text((tag_x + 2, tag_y + 2), tag_text, font=tag_font, fill=shadow_color)
-    # Main tag text
-    draw.text((tag_x, tag_y), tag_text, font=tag_font, fill=main_text_color)
-
     # Convert to RGB if saving as a JPEG (since JPEG doesn't support transparency)
     if output_path.lower().endswith(('.jpg', '.jpeg')):
         image = image.convert("RGB")
@@ -81,4 +67,4 @@ def make_just_girly_things_image(
     print(f"Saved to {output_path}")
 
 if __name__ == "__main__":
-    make_just_girly_things_image("Next time you choose your dating partner .... don't let copilot choose\n-Jeff")
+    make_quote_image("Next time you choose your dating partner .... don't let copilot choose\n-Jeff")

@@ -1,0 +1,8 @@
+backgrounds/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git/
+.vscode/
+
